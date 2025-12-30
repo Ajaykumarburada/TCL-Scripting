@@ -1,0 +1,25 @@
+# ----> Single line comment
+;# ----> in line comment
+
+Multiple line comment
+if 0 {
+  body 
+}
+
+Example 1:
+# physical design example
+#output display Floorplan
+set PD Floorplan
+puts $PD
+
+Eample 2:
+set PD Floorplan ;#physical design example
+puts $PD ;# output display floorplan
+
+Example 3:
+if 0 {
+physical design example
+Output display floorplan
+}
+set PD Floorplan
+puts $PD
