@@ -1,6 +1,25 @@
 # TCL-Scripting
 Physical Design
 
+Table of Contents
+1. Introduction to TCL
+2. Basic Syntax and Commands
+3. Variables and Data
+4. Substitution Mechanisms
+5. Operators
+6. Strings
+7. Arrays
+8. Lists
+9. Conditional Statements
+10. Loops
+11. Procedures
+12. File I/O Operations
+13. Built-in Commands
+14. EDA Tool Integration
+15. Advanced Topics
+16. Best Practices
+
+Introduction of TCL Scripting
 Tcl is shortened form of Tool Command Language. John Ousterhout of the University of California, Berkeley, designed it. 
 It is a combination of a scripting language and its own interpreter that gets embedded to the application, we develop with it.
 Tcl was developed initially for Unix. It was then ported to Windows, DOS, OS/2, and Mac OSX. 
@@ -25,3 +44,4 @@ Tcl is a general-purpose language and you can find Tcl everywhere. It includes,
  3. Tcl with CGI based websites.
  4. Desktop GUI applications.
  5. Embedded applications.
+
