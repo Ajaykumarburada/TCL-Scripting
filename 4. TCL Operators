@@ -1,0 +1,137 @@
+Operators:
+
+An operator is a symbol that tells the compiler to perform specific mathematical or logical manipulations. 
+Tcl language is rich in built-in operators and provides the following 
+types of operators:
+  1. uninary operators
+  2. binary operators
+  3. terinary operators
+
+1. Uninary operators:
+  In this we have only one operand 
+Increment(+5),decrement(-1) ,logical not(!) and Bitwise(~) operators
+
+2. Binary operators:
+    1.Arithmetic operators :- {+, -, *, /, % , **} 
+    2.Relational operators :- {> , < ,<=,>=,==,!=}
+    3.Logical operators :- && ,||
+    4.bitwise operators :- (bit wise and)&, | (or) , ^(xor) , ~&(nand) , ~|(nor) , ~^ (xnor)
+    5.shift operators :- >> (right shift) ,<< (left shift)
+      In right shift number div by 2**n
+      In left shift num mul by 2**n
+      
+3. Terinary operators:
+   (condition) ? true expression :false expression
+
+
+****   Example of Arithemetic operator ****
+
+set a 21
+set b 10
+set c [expr $a + $b]
+puts "Line 1 - Value of c is $c\n"
+set c [expr $a - $b]
+puts "Line 2 - Value of c is $c\n"
+set c [expr $a * $b]
+puts "Line 3 - Value of c is $c\n"
+set c [expr $a / $b]
+puts "Line 4 - Value of c is $c\n"
+set c [expr $a % $b]
+puts "Line 5 - Value of c is $c\n"
+
+**** Example of Relational operator ****
+
+Example 1:
+set a 10
+set b 10
+
+if {[expr $a == $b]} {
+    puts "a is equal to b\n"
+} else {
+puts "Line 1 - a is not equal to b\n"
+}
+if { $a < $b } {
+puts "Line 2 - a is less than b\n"
+} else {
+puts "Line 2 - a is not less than b\n"
+}
+if { $a > $b } {
+puts "Line 3 - a is greater than b\n"
+} else {
+puts "Line 3 - a is not greater than b\n"
+}
+
+Example 2:
+set a 5
+set b 20
+if { $a <= $b } {
+puts "Line 4 - a is either less than or equal to b\n"
+}
+if { $b >= $a } {
+puts "Line 5 - b is either greater than or equal to b\n"
+}
+
+**** Example of Logical operator ****
+
+set a 5
+set b 20
+if { $a && $b } {
+ puts "Line 1 - Condition is true\n"
+}
+if { $a || $b } {
+puts "Line 2 - Condition is true\n"
+}
+# lets change the value of a and b 
+set a 0
+set b 10
+if { $a && $b } {
+puts "Line 3 - Condition is true\n"
+} else {
+puts "Line 3 - Condition is not true\n"
+}
+if { !($a && $b) } {
+puts "Line 4 - Condition is true\n"
+}
+
+**** Bitwise operators ****
+
+set a 60 ;# 60 = 0011 1100 
+set b 13 ;# 13 = 0000 1101
+set c [expr $a & $b] ;# 12 = 0000 1100
+puts "Line 1 - Value of c is $c\n"
+set c [expr $a | $b;] ;# 61 = 0011 1101
+puts "Line 2 - Value of c is $c\n"
+set c [expr $a ^ $b;] ;# 49 = 0011 0001
+puts "Line 3 - Value of c is $c\n"
+set c [expr $a << 2] ;# 240 = 1111 0000
+puts "Line 4 - Value of c is $c\n"
+set c [expr $a >> 2] ;# 15 = 0000 1111
+puts "Line 5 - Value of c is $c\n"
+
+**** Terinary operator ****
+
+set a 10;
+set b [expr $a == 1 ? 20: 30]
+puts "Value of b is $b\n"
+set b [expr $a == 10 ? 20: 30]
+puts "Value of b is $b\n"
+
+
+Example 
+
+set a 20
+set b 10
+set c 15
+set d 5
+set e [expr [expr $a + $b] * $c / $d ] ;# ( 30 * 15 ) / 5
+puts "Value of (a + b) * c / d is : $e\n"
+set e [expr [expr [expr $a + $b] * $c] / $d] ;# (30 * 15 ) / 5]
+puts "Value of ((a + b) * c) / d is : $e\n"
+set e [expr [expr $a + $b] * [expr $c / $d] ] ;# (30) * (15/5)
+puts "Value of (a + b) * (c / d) is : $e\n"
+set e [expr $a + [expr $b * $c ] / $d ] ;# 20 + (150/5)
+puts "Value of a + (b * c) / d is : $e\n"
+
+
+
+
