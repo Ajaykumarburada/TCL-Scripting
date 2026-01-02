@@ -1,0 +1,175 @@
+TCL- Decisions (or) control structures:
+
+Decision making structures require that the programmer specifies one or more conditions to be evaluated or tested by the program, along with a statement or statements to be 
+executed if the condition is determined to be true, and optionally, other statements to be executed if the condition is determined to be false.
+
+ 1. if statement 
+ 2. if else statement
+ 3. if elseif statement
+ 4. nested statement
+ 5. Switch statement
+ 6. Nested Switch statement
+
+ 1. if statement :
+       An ‘if’ statement consists of a Boolean expression followed by one or more statements.
+syntax:
+        if {condition} {
+            body of if statement is execute condition is true
+        }
+
+Example:
+      set a 10
+      #check the boolean condition using if statement
+      if { $a < 20 } {
+       # if condition is true then print the following 
+       puts "a is less than 20"
+      }
+      puts "value of a is : $a
+
+2. if else statement:
+      An if statement can be followed by an optional else statement, which executes when the Boolean expression is false.
+syntax:
+        if {condition} {
+       body of if statement is execute condition is true
+       } else {
+       body of else statement is execute condition is false
+       }
+       
+Example:
+      set a 100
+      #check the boolean condition 
+      if {$a < 20 } {
+       #if condition is true then print the following 
+       puts "a is less than 20"
+      } else {
+       #if condition is false then print the following 
+       puts "a is not less than 20"
+      }
+      puts "value of a is : $a"
+
+3. if elseif statement:
+    An ‘if’ statement can be followed by an optional else if...else statement, which is very useful to test various conditions using single if...else if statement.
+syntax:
+      if {condition 1} {
+       body of if statement is executed when condition 1 is true
+       } elseif {condtion 2} {
+       body of elseif statement is executed when condition is true & above condition 1 is false
+       } else {
+       body of else is executed when above both condition 1 & condition 2 is false
+       }
+Example:
+      set a 100
+      #check the boolean condition
+      if { $a == 10 } {
+       # if condition is true then print the following 
+       puts "Value of a is 10"
+      } elseif { $a == 20 } {
+       # if else if condition is true 
+       puts "Value of a is 20"
+      } elseif { $a == 30 } {
+       # if else if condition is true 
+       puts "Value of a is 30"
+      } else {
+      # if none of the conditions is true 
+       puts "None of the values is matching"
+      }
+      puts "Exact value of a is: $a"
+
+4. Nested if statement:
+      It is always legal in Tcl to nest if-else statements, which means you can use one if or else if statement inside another if or else if statement(s).
+syntax:
+      if {condition 1} {
+        this condition 1 is executed when it is true
+          if {condition 2} {
+            this condition 2 is executed when it is true
+          }
+        }
+Example:
+      set a 100
+      set b 200
+      # check the boolean condition 
+      if { $a == 100 } {
+       # if condition is true then check the following 
+       if { $b == 200 } {
+       #if condition is true then print the following 
+       puts "Value of a is 100 and b is 200"
+       }
+      }
+      puts "Exact value of a is : $a"
+      puts "Exact value of b is : $b"
+
+5. Switch statement:
+    A switch statement allows a variable to be tested for equality against a list of values. 
+    Each value is called a case, and the variable being switched on is checked for each switch case.
+syntax:
+      switch {condition} {
+       "case1" {
+       body of the case1
+       }
+       "case2" {
+       body of the case2
+       }
+       "case3" {
+       body of the case3
+       }
+       deafult {
+       body of the dafault
+       }
+     }
+Example:
+      set grade C
+      switch $grade {
+      A { 
+      puts "Well done!" 
+      }
+      B { 
+      puts "Excellent!" 
+      } 
+      C {
+      puts "You passed!" 
+      } 
+      F { 
+      puts "Better try again" 
+      } 
+      default {
+      puts "Invalid grade" 
+      }
+    }
+      puts "Your grade is $grade"
+
+6. Nested switch statement:
+    It is possible to have a switch as part of the statement sequence of an outer switch.
+    Evenif the case constants of the inner and outer switch contain common values, no conflicts will arise.
+syntax:
+      switch {condition 1} {
+             "case1" {
+             body of the case1
+             }
+          switch {condition 2}
+             "case2" {
+             body of the case2
+             }
+             "case3" {
+             body of the case3
+             }
+             deafult {
+             body of the dafault
+             }
+           }
+Example:
+      set a 100
+      set b 200
+      switch $a {
+       100 {
+       puts "This is part of outer switch"
+       switch $b {
+       200 {
+       puts "This is part of inner switch!"
+       }
+      }
+       } 
+      }
+      puts "Exact value of a is : $a"
+      puts "Exact value of a is : $b"
+
+          
