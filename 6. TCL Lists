@@ -1,0 +1,190 @@
+TCL Lists:
+    List is one of the basic data-type available in Tcl. It is used for representing an ordered collection of items. 
+    It can include different types of items in the same list. Further, a list can contain another list.
+syntax:
+      set listName { item1 item2 item3 .. itemn }
+            (or)
+      set listName [list item1 item2 item3]
+            (or) 
+      set listName [split "items separated by a character" split_character]
+Example:
+      set colorList1 {red green blue}
+      set colorList2 [list red green blue]
+      set colorList3 [split "red_green_blue" _]
+      puts $colorList1
+      puts $colorList2
+      puts $colorList3
+
+build in function of the list.
+      1. llength 
+      2. lindex 
+      3.lrange 
+      4.linsert 
+      5.lreplace
+      6.lassign 
+      7.lappend
+      8.lset
+      9.split
+      10.concat
+      11.lsort 
+      12.lsearch
+      13.lmap
+
+1. llength :
+  it is used to find the length of the list.
+Example:
+      set a [list 1 2 3 4 5 6]
+      set b [llength $a]
+      puts $b
+      
+2. lindex :
+   it is used to access the elements of the list
+Example 1:
+      set a [list 1 2 3 4 5 6]
+      set b [lindex $a 0]
+      puts $b
+Example 2:
+      set a [list [list 1 2 3 4 5] [list red orange yellow]]
+      set b [lindex $a 2 2]
+      puts $b
+      
+3. lrange :
+    it is used to access the consective elements in the list.
+Example:
+      set x [list red green black yellow]
+      set b [lrange $x 0 2]
+      puts $b
+      
+4. linsert :
+    it is used to insert the element in the listat particular index.
+Example 1:
+      set a [list red green black yellow]
+      set b [linsert $a 0 white]
+      puts $a
+      puts $b
+Example 2:
+      set a [list red green black yellow]
+      set a [linsert $a 0 white]
+      puts $a
+      
+5.lreplace:
+    it is used to replace the elements at particular element.
+Example 1:
+      set a [list red green orange]
+      set b [lreplace $a 1 1 white]
+      puts $b
+Example 2:
+      set a [list red green orange]
+      puts $a
+Example 3:
+      set b [lreplace $a 0 end white]
+      puts $b
+
+6. lassign :
+    it is used to assign the elements of the list into varibales which we menetioned.
+Example:
+      set a [list red orange green blue]
+      lassign $a b c d e
+      puts $b
+      puts $c
+      puts $d
+      puts $e
+
+7.l append:
+    it is used to add/append the element at the end of the existing list.
+Example 1:
+      set x [list 1 2 3 4 5 6]
+      puts $x
+      lappend x 7
+      puts $x
+Example 2:
+      set x [list 1 2 3 4 5 6]
+      puts $x
+      lappend x 7 8 9 10 11 12
+      puts $x
+      
+8.lset:
+    it is used to set elements at particular index range.
+    used to modify the elements in a list.
+    it allows to change one or more elements in the list.
+    by specified the index of the elements which we need to modifiy the new value.
+syntax:
+    set varname index value
+Example 1:
+    set a [list 21 22 23 24 25 26]
+    puts $a
+    lset a 0 50
+    puts $a
+Example 2:
+    set mylist [list a b c d e]
+    lset mylist 2 C
+    puts $mylist
+    
+9.split:
+  it is used to split the list.
+Examples:
+      set a [list red_green_orange]
+      puts $a
+      set b [llength $a]
+      puts $b
+      set c [split $a "_"]
+      puts $c
+      puts [llength $c]  
+      
+10. concat:
+    it is used to join the one or more list.
+Example:
+      set a [list 1 2 3 4 5]
+      puts $a
+      set b [list 6 7 8 9 10]
+      puts $b
+      set c [concat $a $b]
+      puts $c
+      
+11.lsort :
+    set all the elements according to ASCII order.
+Example:
+      set a [list orange Apple BANANNA]
+      puts $a
+      set b [lsort $a]
+      puts $b
+      
+12. lsearch
+    The lsearch command in Tcl is used to search for a specific element in a list and return its index.
+Example:
+    set mylist {apple banana cherry}
+    set index [lsearch $mylist banana]
+    puts "Index of banana: $index
+13. lmap
+    The lmap command in Tcl is used to apply a command or script to each element of a list and return a new list containing the results.
+Example:
+    set mylist {apple banana cherry}
+    set upperlist [lmap elem $mylist {string toupper $elem}]
+    puts $upperlist
+
+Examples of lists:
+
+ 1. set a {TCL DSD Linux Gvim Custom_layout PD Functional_verification DV DFT Embedded_system}
+    puts $a
+    set b [lsort $a]
+    puts $b
+    set i 1
+    foreach c $b {
+    puts "course $i is:$c"
+    incr i
+    }
+
+2.  set port1 {p1 p2 p3 p4 p5 p66 p17}
+    set port2 {p6 p7 p8 p9 p10 p11 }
+    set merged [concat $port1 $port2]
+    puts $merged
+    set len [llength $merged]
+    puts $len
+    set a [expr $len / 4.0]
+    puts $a
+    puts $a
+    set b [expr ceil($a)]
+    puts $b
+    set c [expr int($b)]
+    puts $c  
+
