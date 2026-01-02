@@ -1,0 +1,195 @@
+String:
+    It is collection of characters or sequence of characters
+
+STRING manipulation Techniques:
+    1.length
+    2.reverse
+    3.Compare
+    4.range/index
+    5.map
+    6.toupper
+    7.tolower
+    8.first
+    9.last
+    10.trimleft
+    11.trimright
+Syntax:
+       set variable name
+       set variable "name1 name2 name3"
+       set variable {name1 name2 name3}
+Example:
+      set PD_TOPICS PnR
+      set PD "Floorplan Powerplan Placement"
+      set pd_topics {CTS Routing signoff}
+      puts $PD_TOPICS
+      puts $PD
+      puts $pd_topics
+
+1. string length:
+    it is used to find the length of the string inclusing spaces.
+syntax:
+      string length $variable_name
+Example 1:
+      set a "this is tcl class"
+      set b [string length $a]
+      puts $b
+Example 2:
+      set str "Hello, world!"
+      set length [string length $str]
+      puts "Length of the string: $length"
+
+2. string reverse
+   it is used to reverse the string
+syntax: 
+    string reverse $variable_name
+Example 1:
+      set a "this is tcl class"
+      set b [string reverse $a]
+      puts $b
+Example 2:
+      set str "abcde"
+      set reversed_str [string reverse $str]
+      puts "Reversed string: $reversed_str"
+
+3. string compare:
+    Compares two strings lexicographically and returns -1 if the first string is less than the second, 0 if they are equal, and 1 if the first string is greater than the second.
+Syntax:
+    string compare $variable1 $varibale2
+
+Examples:
+# String compare if string1 and string2 is same, prints output is 0
+      set a "this is tcl class"
+      set b "this is tcl class"
+      set c [string compare $a $b]
+      puts "its prints output is:$c"
+
+# String compare if string1 lessthan and string2 , prints output is -1
+      set a "this is tcl cla"
+      set b "this is tcl class"
+      set c [string compare $a $b]
+      puts "its prints output is:$c"
+
+# String compare if string1 greater than and string2 , prints output is 1
+      set a "this is tcl classs"
+      set b "this is tcl class"
+      set c [string compare $a $b]
+      puts "its prints output is:$c"
+
+Example 2:
+      set str1 "hello"
+      set str2 "world"
+      set comparison_result [string compare $str1 $str2]
+      if {$comparison_result == 0} {
+       puts "Strings are equal"
+      } else {
+       puts "Strings are not equal"
+      }
+4. string index:
+syntax:
+    string index $variable_name index
+Examples:
+    set s1 "Physical Design"
+    set s2 "D"
+    puts "First occurrence of $s2 in s1"
+    puts [string first $s2 $s1]
+    puts "Character at index 0 in s1"
+    puts [string index $s1 0]
+    puts "Last occurrence of $s2 in s1"
+    puts [string last $s2 $s1]
+    puts "Word end index in s1"
+    puts [string wordend $s1 20]
+    puts "Word start index in s1"
+    puts [string wordstart $s1 20]
+Example 2:
+    set str "abcde"
+    set char [string index $str 2]
+    puts "Character at index 2: $char"
+
+5. string range:
+syntax:
+    string range $variable_name index1 index 2
+Example :
+    set str "Hello, world!"
+    set substring [string range $str 7 11]
+    puts "Substring: $substring"
+
+6. string map:
+    set str "abcde
+    set mapped_str [string map {a b} {1 2} $str]
+    puts "Mapped string: $mapped_str" # Output: 12cde
+
+7. string append:
+    set str "Hello"
+    string append str " world!"
+    puts "Appended string: $str" # Output: Hello world!
+
+8. string tolower:
+    set str "Hello, World!"
+    set lowercase_str [string tolower $str]
+    puts "Lowercase string: $lowercase_str" # Output: hello, world!
+
+9. string toupper:
+    set str "Hello, World!"
+    set uppercase_str [string toupper $str]
+    puts "Uppercase string: $uppercase_str" # Output: HELLO, WORLD!
+
+10. string trim:
+      set str " Hello, world! "
+      set trimmed_str [string trim $str]
+      puts "Trimmed string: $trimmed_str" # Output: Hello, world!
+
+11. string trimleft:
+      set str " Hello, world!"
+      set trimmed_str [string trimleft $str]
+      puts "Left-trimmed string: $trimmed_str" # Output: Hello, world!
+
+12. string trimright:
+      set str "Hello, world! "
+      set trimmed_str [string trimright $str]
+      puts "Right-trimmed string: $trimmed_str" # Output: Hello, world!
+
+13. string equal:
+      set str1 "hello"
+      set str2 "world"
+      if {[string equal $str1 $str2]} {
+       puts "Strings are equal"
+      } else {
+       puts "Strings are not equal"
+      } # Output: Strings are not equal
+
+14. string is:
+      set str "hello"
+      if {[string is alpha $str]} {
+       puts "String contains only alphabetic characters"
+      } # Output: String contains only alphabetic characters
+
+15. string match:
+      set str "hello world"
+      if {[string match "hello*" $str]} {
+       puts "String starts with 'hello'"
+      } # Output: String starts with 'hello'
+
+16. string replace:
+      set str "Hello, world!"
+      set replaced_str [string replace $str 7 11 "there"]
+      puts "Replaced string: $replaced_str" # Output: Hello, there!
+
+21. string cat:
+      set str1 "Hello"
+      set str2 " world!"
+      set concatenated_str [string cat $str1 $str2]
+      puts "Concatenated string: $concatenated_str" # Output: Hello world!
+
+22. string join:
+      set list {"Hello" "world!"}
+      set joined_str [string join " " $list]
+      puts "Joined string: $joined_str" # Output: Hello world!
+
+23. string format:
+      set name "Ajaykumarburada"
+      set age 24
+      set formatted_str [string format "My name is %s and I am %d years old." $name $age]
+      puts "Formatted string: $formatted_str" # Output: My name is Ajaykumarburada and I am 24 years old.
+      
+
+
