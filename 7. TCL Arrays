@@ -1,0 +1,66 @@
+TCL - Arrays:
+    An array is a systematic arrangement of a group of elements using indices.
+Syntax:
+    set ArrayName(Index) value
+Example:
+    set PD_Topic(1) Floorplan
+    set PD_Topic(2) Powerplan
+    set PD_Topic(3) Placement
+    puts $PD_Topic(1)
+    puts $PD_Topic(2)
+    puts $PD_Topic(3)
+    
+Build in function of arrays:
+    1. Array Size
+    2. Array Iteration
+    3. Associative Arrays
+    4. Array indices
+    5. Iteration of Associative arrays
+    
+1. size of arrays:
+syntax:
+    [array size variablename]
+Example:
+    set PD_Topic(0) Floorplan
+    set PD_Topic(1) Powerplan
+    puts [array size PD_Topic]
+    
+2. Array iteration:
+    Though, array indices can be non-continuous like values specified for index 1 then index 10 and so on. 
+    But, in case they are continuous, we can use array iteration to access elements of the array.
+Example:
+      set PD_Topic(0) Floorplan
+      set PD_Topic(1) Powerplan
+      for { set index 0 } { $index < [array size PD_Topic] } { incr index } {
+       puts "PD_Topic($index) : $PD_Topic($index)"
+      }
+
+3. Associative Arrays:
+    Arrays are stored and retrieved without any specific order. Associative arrays have an index that is not necessarily a number, and can be sparsely populated.
+Example:
+      set personA(Name) "Ajaykumar"
+      set personA(Age) 24
+      puts $personA(Name)
+      puts $personA(Age)
+
+4. Indices of Array:
+syntax:
+      [array names variablename]
+Example:
+      set personA(Name) "Ajaykumar"
+      set personA(Age) 24
+      puts [array names personA]
+
+5. Iteration of Associative arrays
+Example:
+       set personA(Name) "Ajaykumar"
+       set personA(Age) 24
+       foreach index [array names personA] {
+       puts "personA($index): $personA($index)"
+      }
+
+
+
+
+
+      
