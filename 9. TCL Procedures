@@ -1,0 +1,57 @@
+TCL Procedures:
+    TCL (Tool Command Language), a procedure is a reusable code block that can be called multiple times with different inputs.
+    It is similar to a function or subroutine in other programming languages.
+    It is used to avoid same code being repeated in multiple locations.
+syntax:
+      proc procedureName {arguments} {
+       body of the proc
+      }
+      procedureName
+Example 1:
+      proc Physical_design {} {
+       puts "Floorplan, Powerplan!"
+      }
+      Physical_design
+i) Proedure with multiple arguments:
+      proc add {a b} {
+       return [expr $a+$b]
+      }
+      puts [add 10 30]
+      
+ii) Procedure with variable arguments:
+      proc avg {numbers} {
+       set sum 0
+       foreach number $numbers {
+       set sum [expr $sum + $number]
+      }
+       set average [expr $sum/[llength $numbers]]
+       return $average
+      }
+      puts [avg {70 80 50 60}]
+      puts [avg {70 80 50 }]
+      
+iii) Procedure with Default arguments:
+        Default arguments are used to provide default values that can be used if no value is provided.
+        
+      proc add {a {b 100} } {
+       return [expr $a+$b]
+      }
+      puts [add 10 30]
+      puts [add 10]
+      
+iv) Procedure with return keyword:
+      proc add {x1 x2} {
+      set c [expr $x1 + $x2]
+      return $c
+      }
+      puts "Addition of x1 and x2 is:[add 5 10]"
+
+v) Recursive Procedure:
+      proc factorial {number} {
+       if {$number <= 1} {
+       return 1
+       }
+       return [expr $number * [factorial [expr $number - 1]]]
+      }
+      puts [factorial 3]
+      puts [factorial 5]
