@@ -1,0 +1,204 @@
+TCL Loops:
+   *** There may be a situation where you need to execute a block of code several number of times. 
+    In general, statements are executed sequentially: The first statement in a function is executed first, followed by the second, and so on.
+   *** A loop statement allows us to execute a statement or group of statements multiple times.
+
+Tcl language provides the following types of loops to handle looping requirements:
+    1. for loop
+    2. while loop
+    3. foreach loop
+    4. Nested loop
+    5. Loop control statement (Break & continue)
+    6. infinite loop
+    
+1. For loop:
+    Executes a sequence of statements multiple times and abbreviates the code that manages the loop variable.
+syntax:
+      for {initialization} {condition} {increment/decrement} {
+       statement(s) :#body of the for loop
+      }
+Example:
+      for { set a 10} {$a < 20} {incr a} {
+       puts "value of a: $a"
+      }
+      
+2. while loop:
+    A while loop statement in Tcl language repeatedly executes a target statement as long as a given condition is true.
+syntax:
+      intilization  ;# set i 1
+      while{condtion} {
+       body of while loop
+       incr/decr
+       }
+Example:
+      set a 10
+      #while loop execution 
+      while { $a < 20 } {
+       puts "value of a: $a"
+       incr a
+      }
+
+3. foreach loop:
+    it is used to iterate the entire list.
+syntax:
+      foreach variable $list {
+       puts $variable  ;#it can print each an every variable in list
+       }
+       
+1. Basic foreach loop
+Example 1:
+      foreach i {1 2 3 4 5} {
+          puts $i
+      }
+2. Foreach with strings
+Example 2:
+      foreach name {Ajay Ravi Kumar Suresh} {
+      puts "Name: $name"
+      }
+3. foreach with multiple variables
+Example 3:
+      foreach {a b} {10 20 30 40 50 60} {
+          puts "a = $a, b = $b"
+      }
+4. foreach with two lists
+Example 4:
+    foreach x {1 2 3} y {10 20 30} {
+        puts "x = $x, y = $y"
+    }
+5. foreach over an array
+Example 5:
+      set arr(a) 10
+      set arr(b) 20
+      set arr(c) 30
+      
+      foreach key [array names arr] {
+          puts "$key = $arr($key)"
+      }
+6. foreach with list length mismatch
+Example 6:
+      foreach x {1 2 3 4} y {10 20} {
+          puts "x=$x y=$y"
+      }
+
+4. Nested for Loop & while loop:
+    Tcl allows to use one loop inside another loop.
+syntax of nested for loop:
+      for {initialization} {condition} {increment} {
+       for {initialization} {condition} {increment} {
+       body of second for loop
+       }
+       body of first for loop
+      }
+Syntax of nested while loop:
+      initialization1
+      while {condition} {
+       initialization2
+       while {condition} {
+       body of second while loop
+       }
+       body of first while looop
+      }
+Example 1:Print prime numbers from 1 to 100 by using nested for loop
+
+    set j 0;
+    for {set i 2} {$i<100} {incr i} {
+     for {set j 2} {$j <= [expr $i/$j] } {incr j} {
+     if { [expr $i%$j] == 0 } {
+     break
+     } 
+     }
+     if {$j >[expr $i/$j] } {
+     puts "$i is prime"
+     }
+    }
+Example 2: print prime numbers from 1 to 100 by using while loop
+
+        set i 2
+        while {$i <= 100} {
+        set divisior 0
+        set j 2
+          while {$j <= $i} {
+            if {$i % $j == 0} {
+              incr divisior
+            }
+            incr j
+          }
+          if {$divisior <= 1} {
+            puts "$i"
+          }
+          incr i
+        }
+
+5. Loop control statement (Break, Continue)
+i) Break statement:
+    **** The break statement in Tcl language is used for terminating a loop. When the break statement is encountered inside a loop, the loop is immediately terminated and program 
+         control resumes at the next statement following the loop.
+    **** If you are using nested loops (i.e., one loop inside another loop), the break statement will stop the execution of the innermost loop and start executing the next line of code after 
+         the block.
+syntax
+      break;
+Example 1:
+      set a 10
+      # while loop execution 
+      while {$a < 20 } {
+       puts "value of a: $a"
+       incr a
+       if { $a > 15} {
+       # terminate the loop using break statement 
+       break
+       }
+      }
+Example 2: write a tcl program to print all the numbers from 1 to 100. and break when in its in 70's?
+      for {set i 1} {$i <= 100} {incr i} {
+      if {$i / 10 == 7} {
+      break ; # stop the iteration or termination of the loop
+      }
+      puts $i
+      }
+      
+ii) Continue statement:
+    **** The continue statement in Tcl language works somewhat like the break statement.
+         Instead of forcing termination, however, continue forces the next iteration of the loop to take place, skipping any code in between.
+    **** For the for loop, continue statement causes the conditional test and increment portions of the loop to execute. 
+         For the while loop, continue statement passes the program control to the conditional tests.
+syntax:
+        continue;
+Example 1:
+        set a 10
+        # do loop execution 
+        while { $a < 20 } {
+         if { $a == 15} {
+         #skip the iteration 
+        incr a
+         continue
+         }
+         puts "value of a: $a"
+         incr a 
+        }
+Example 2: write a tcl program to print all the numbers from 1 to 100. and skip when in its in 70's?
+        for {set i 1} {$i <= 100} {incr i} {
+        if {$i / 10 == 7} {
+        continue ; # skip current iteration and continue
+        }
+        puts $i
+        }
+6. Infinite loop:
+      A loop becomes infinite loop if a condition never becomes false. The while loop is traditionally used for this purpose. 
+      You can make an endless loop by leaving the conditional expression as 1.
+      Tcl programmers more commonly use the while {1} construct to signify an infinite loop.
+      
+NOTE: You can terminate an infinite loop by pressing Ctrl + C keys.
+syntax:
+        while {1} {
+         puts "This loop will run forever."
+        }
+        
+
+            
+
+
+
+        
+
+
+            
