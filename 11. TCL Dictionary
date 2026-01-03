@@ -1,0 +1,86 @@
+TCL Dictionary
+    A dictionary is an arrangement for mapping values to keys.
+    In Tcl, a dictionary is a data structure that associates keys with values. 
+    It is similar to an array, but unlike an array, the keys can be any Tcl value, not just integers or strings.
+syntax:
+      dict set dictname key value
+              ( or ) 
+      dict create dictname key1 value1 key2 value2 .. keyn valuen
+Examples :
+        dict set colours colour1 red 
+        puts $colours
+        dict set colours colour2 green
+        puts $colours
+        set colour [dict create colour1 "black" colour2 "white" colour3 "blue"]
+        puts $colour
+Build the functionality in dict:
+      1. Size of dict
+      2. Dictionary iteration
+      3. Value for key in dict
+      4. All keys in dict
+      5. All values in dict
+      6. keys exist in dict
+      
+1. size of dict:
+syntax:
+      [dict size dictname]
+Example:
+      set colours [dict create colour1 "black" colour2 "white"]
+      puts [dict size $colours]
+
+2. Dictionary Iteration:
+    A simple dictionary iteration for printing keys and valued of the dictionary.
+Example:
+      set colours [dict create colour1 "black" colour2 "white"]
+      foreach item [dict keys $colours] {
+       set value [dict get $colours $item]
+       puts $value
+      }
+      
+3. Value for key in dict:
+syntax:
+      [dict get $dictname $keyname]
+Example:
+        set colours [dict create colour1 "black" colour2 "white"]
+        set value [dict get $colours colour1]
+        puts $value
+        
+4.  All keys in dict:
+syntax:
+        [dict keys $dictname]
+Example :
+        set colours [dict create colour1 "black" colour2 "white"]
+        set keys [dict keys $colours]
+        puts $keys
+
+5. All Values in dict
+syntax:
+        [dict values $dictname]
+Example :
+        set colours [dict create colour1 "black" colour2 "white"]
+        set values [dict values $colours]
+        puts $values
+
+6. Key Exists in dict:
+syntax:
+      [dict values $dictname]
+Example:
+        set colours [dict create colour1 "black" colour2 "white"]
+        set result [dict exists $colours colour1]
+        puts $result
+        
+7. set the values in dict:
+Example:
+        set colour [dict create colour1 "black" colour2 "white" colour3 "blue"]
+        puts $colour
+        dict set colour colour4 "orange"
+        puts $colour
+8. remove a key-value pair from the dict:
+Example:
+      set colour [dict create colour1 {"black" "purpple" } colour2 "white" colour3 "blue" colour4 "orange"]
+      puts $colour
+      dict unset colour colour1
+      puts $colour
+
+
+
