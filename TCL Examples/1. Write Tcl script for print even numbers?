@@ -1,1 +1,54 @@
+1.  Verify particular number is even or odd by using if else statement
+      set num 45
+      if {$num % 2 == 0} {
+        puts "$num is even number"
+      } else {
+        puts "$num is odd number"
+      }
+
+2. Getting number from user globally to verify num is even or odd
+        gets stdin num    
+        if {$num % 2 == 0} {
+                puts "$num is even number"
+              } else {
+                puts "$num is odd number"
+              }
+3. 
+i) print even numbers by using for loop
+
+      for {set a 1} {$a <= 100} {incr a} {
+        if {$a % 2 == 0} {
+          puts "$a"
+        }
+      }
+
+
+ii)  Print even numbers by using nested for loop
+ 
+      for {set a 0} {$a <= 100} {incr a} {
+        for {set b $a} {$b <= $a} {incr b} {
+          if {[expr $a % 2 == 0] } {
+            puts $a
+          }
+        }
+      }
+
+iii) print even numbers by using while loop
+
+      set a 1
+      while {$a <= 100} {
+        puts "[expr $a % 2 == 0]"
+        incr a
+      }
+
+iv) print even numbers by using nested while loop
+
+      set i 0
+      while { $i <= 100} {
+          while { [expr $i%2] == 0} {
+              puts $i
+              incr i
+          }
+            incr i
+      }
 
