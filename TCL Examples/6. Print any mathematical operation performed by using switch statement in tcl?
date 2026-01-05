@@ -1,0 +1,41 @@
+1. Print any mathematical operation performed by using switch statement?
+
+          puts "print first number"
+          
+          gets stdin a
+          
+          puts "print second number"
+          
+          gets stdin b
+          
+          gets stdin operand
+          
+          switch $operand {
+            + {
+              puts "[expr $a + $b]"
+            }
+            - {
+              puts "[expr $a - $b]"
+            }
+            * {
+              puts "[expr $a * $b]"
+            }
+            % {
+              puts "[expr $a % $b]"
+            }
+            / {
+              puts "[expr $a / $b]"
+            }
+            sqrt {
+              puts "[expr sqrt($a)]"
+            }
+            power {
+              puts "[expr pow($a $b)]"
+            }
+            expo {
+              puts "[expr $a ** $b]"
+            }
+            default {
+              puts "operator is invalid"
+            }
+          }
