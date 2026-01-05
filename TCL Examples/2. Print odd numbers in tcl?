@@ -1,0 +1,37 @@
+1. Write tcl script for print odd number by using loops
+i) print odd numbers by using for loop
+
+      for {set a 1} {$a <= 100} {incr a} {
+        if {$a % 2 != 0} {
+          puts "$a"
+        }
+      }
+
+ii)  Print odd numbers by using nested for loop
+
+       for {set a 0} {$a <= 100} {incr a} {
+        for {set b $a} {$b <= $a} {incr b} {
+          if {[expr $a % 2 != 0] } {
+            puts $a
+          }
+        }
+      }
+
+iii) print odd numbers by using while loop
+
+      set a 1
+      while {$a <= 100} {
+        puts "[expr $a % 2 != 0]"
+        incr a
+      }
+
+iv) print odd numbers by using nested while loop
+
+      set i 0
+      while { $i <= 100} {
+          while { [expr $i%2] != 0} {
+              puts $i
+              incr i
+          }
+            incr i
+      }
