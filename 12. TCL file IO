@@ -1,0 +1,75 @@
+TCL File I/O handling:
+    Tcl supports file handling with the help of the built in commands open, read, puts, gets, and close.
+    A file represents a sequence of bytes, does not matter if it is a text file or binary file.
+
+1. Opening files:
+    Tcl uses the open command to open files in Tcl.
+syntax:
+      open fileName accessMode
+      
+Mode Description:
+r
+    Opens an existing text file for reading purpose and the file must exist. 
+    This is the default mode used when no accessMode is specified.
+    
+w
+    Opens a text file for writing, if it does not exist, then a new file is created else existing file is truncated.
+
+a
+    Opens a text file for writing in appending mode and file must exist. 
+    Here, your program will start appending content in the existing file content.
+
+r+ 
+    Opens a text file for reading and writing both. File must exist already.
+
+w+
+    Opens a text file for reading and writing both. It first truncate the file to zero 
+    length if it exists otherwise create the file if it does not exist.
+
+a+
+    Opens a text file for reading and writing both. It creates the file if it does not 
+    exist. The reading will start from the beginning, but writing can only be appended.
+
+2. closing a file:
+    To close a file, use the close command.
+    Any file that has been opened by a program must be closed when the program finishes using that file.
+syntax:
+    close filename
+
+3. writing a file:
+    Puts command is used to write to an open file.
+syntax:
+      puts $filename "text to write"
+Example:
+      set fp [open "input.txt" w+]
+      puts $fp "test"
+      close $fp
+
+4. Reading a file:
+syntax:
+      set file_data [read $fp]
+Example 1:
+      set fp [open "input.txt" w+]
+      puts $fp "test"
+      close $fp
+      set fp [open "input.txt" r]
+      set file_data [read $fp]
+      puts $file_data
+      close $fp
+Example 2: reading file till end of file line by line.
+        set fp [open "input.txt" w+]
+        puts $fp "test\ntest"
+        close $fp
+        set fp [open "input.txt" r]
+        while { [gets $fp data] >= 0 } {
+         puts $data
+        }
+        close $fp
+
+      
+
+
+
+
+
+
