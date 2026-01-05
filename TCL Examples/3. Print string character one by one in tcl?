@@ -1,0 +1,13 @@
+1. Print string character one by one using for loop?
+      set course "Physical design"
+      for {set i 0} {$i < [string length $course]} {incr i} {
+        puts [string index $course $i]
+      }
+      
+2.  Print string character one by one using while loop?
+      set course "Physical Design"
+      set i 0
+      while {$i < [string length $course]} {
+        puts [string index $course $i]
+        incr i
+      }
