@@ -1,0 +1,17 @@
+1. print the * in pattern wise using increment
+
+      for {set i 0} {$i <= 5} {incr i} {
+        for {set j 1} {$j <= $i} {incr j} {
+          puts -nonewline "*"
+        }
+        puts "\n"
+      }
+      
+2. print the * in pattern wise using decrement
+
+      for {set i 5} {$i >= 1} {incr i -1} {
+          for {set j 1} {$j <= $i} {incr j} {
+              puts -nonewline "*"
+          }
+          puts "\n"
+      }
