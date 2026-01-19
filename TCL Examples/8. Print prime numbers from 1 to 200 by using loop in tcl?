@@ -1,0 +1,35 @@
+#Print prime numbers in between 1 to 200 using nested for loop?
+Prime number is divisible by only 1 and itself number so divisiors 2  (1 & itself)
+Prime numbers starts from 2
+
+        for {set i 2} {$i <= 200} {incr i} {
+          set divisior 0
+          for {set j 2} {$j <=$i} {incr j} {
+            if {$i % $j == 0} {
+              incr divisior
+            }
+          }
+          if {$divisior <= 1} {
+            puts "$i"
+          }
+        }
+
+
+ii) print prime numbers from 1 to 100 by using while loop
+
+set i 2
+while {$i <= 100} {
+set divisior 0
+set j 2
+  while {$j <= $i} {
+    if {$i % $j == 0} {
+      incr divisior
+    }
+    incr j
+  }
+  if {$divisior <= 1} {
+    puts "$i"
+  }
+  incr i
+}
+
