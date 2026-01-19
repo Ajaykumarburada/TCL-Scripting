@@ -1,0 +1,30 @@
+i)  print swap of two numbers 
+
+      puts "enter first number"
+      gets stdin a 
+      puts "$a"
+      puts "enter second number"
+      gets stdin b
+      puts "$b"
+      
+      set c $a
+      set a $b
+      set b $c
+      puts "swap of a and b: $a $b"
+
+ii) print swap of two numbers using proc
+
+      gets stdin a
+      puts "value of a before swap: $a"
+      gets stdin b 
+      puts "value of b before swap: $b"
+      
+      proc swap {a b} {
+        set c $a
+        set a $b
+        set b $c
+        puts "values of a after swap :$a"
+         puts "values of b after swap :$b"
+      }
+      swap $a $b
+
