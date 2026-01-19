@@ -1,0 +1,24 @@
+1. Print the count of 1 to 100 by using while with if_elseif_ese conditions and continue, break
+
+    set i 0
+    while {$i < 100} {
+      incr i
+      
+      if {$i == 85} {
+        puts "the value $i equals to 85 is continue loop"
+        continue
+      } elseif {$i == 90} {
+        puts "The value $i equals to 90 is out of loop"
+        break;
+      } else {
+        puts "count at $i"
+      }
+    }
+    
+2. display Incrementing count using for loop
+
+    for {set i 0} {$i < 10} {incr i} {
+      puts "i am at count $i and going up
+    }
+
+
