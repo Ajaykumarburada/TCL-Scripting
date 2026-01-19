@@ -17,19 +17,19 @@ Prime numbers starts from 2
 
 ii) print prime numbers from 1 to 100 by using while loop
 
-set i 2
-while {$i <= 100} {
-set divisior 0
-set j 2
-  while {$j <= $i} {
-    if {$i % $j == 0} {
-      incr divisior
-    }
-    incr j
-  }
-  if {$divisior <= 1} {
-    puts "$i"
-  }
-  incr i
-}
+        set i 2
+        while {$i <= 100} {
+        set divisior 0
+        set j 2
+          while {$j <= $i} {
+            if {$i % $j == 0} {
+              incr divisior
+            }
+            incr j
+          }
+          if {$divisior <= 1} {
+            puts "$i"
+          }
+          incr i
+        }
 
