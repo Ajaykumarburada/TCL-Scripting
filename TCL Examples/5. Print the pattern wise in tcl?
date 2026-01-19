@@ -15,3 +15,12 @@
           }
           puts "\n"
       }
+
+                        (or)
+
+      for {set i 1} {$i <= 5} {incr i} {
+        for {set j 5} {$j >= $i} {incr j -1} {
+          puts -nonewline "*"
+        }
+        puts \n
+      }
