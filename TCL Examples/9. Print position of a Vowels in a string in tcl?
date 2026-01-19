@@ -1,0 +1,20 @@
+#Display position of vowels in the string
+Vowels ---- a e i o u
+
+set PD "PHYSICALDESIGNOOPSU"
+
+for {set i 0} {$i < [string length $PD]} {incr i} {
+  if {[string equal -nocase [string index $PD $i] "a"] == 1} {
+    puts "$i: [string index $PD $i]"
+  } elseif {[string equal -nocase [string index $PD $i] "e"] == 1} {
+    puts "$i: [string index $PD $i]"
+  } elseif {[string equal -nocase [string index $PD $i] "i"] == 1} {
+    puts "$i: [string index $PD $i]"
+  } elseif {[string equal -nocase [string index $PD $i] "o"] == 1} {
+    puts "$i: [string index $PD $i]"
+  }  elseif {[string equal -nocase [string index $PD $i] "u"] == 1} {
+    puts "$i: [string index $PD $i]"
+  } else {
+    continue
+  }
+}
