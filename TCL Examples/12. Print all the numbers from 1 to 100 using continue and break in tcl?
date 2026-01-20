@@ -1,0 +1,52 @@
+1. program for print 1 -100 num which is div by 4 & 6 stop when it is in 70?
+
+      for {set i 1} {$i <= 100} {incr i} {
+        
+      if {[expr $i % 4 == 0] && [expr $i % 6 == 0]} {
+        if {$i % 7 == 0} {
+          break
+        }
+        puts "$i"
+      }
+      }
+
+2. program for print 1 -100 num which is div by 4 & 6 skip when it is in 70?
+
+      for {set i 1} {$i <= 100} {incr i} {
+        
+      if {[expr $i % 4 == 0] && [expr $i % 6 == 0]} {
+        if {$i % 7 == 0} {
+          continue
+        }
+        puts "$i"
+      }
+      }
+      
+3. write a tcl program to print all the numbers from 1 to 100.
+which is divisible by 4 and skip when its in 60's and stop when it's in 90's?
+
+      for {set i 1} {$i <= 100} {incr i} {
+        if {$i % 4 == 0} {
+          if {$i % 6 == 0} {
+            continue
+          }
+          if {$i % 9 == 0} {
+            break
+          }
+          puts $i
+        }
+      }
+      
+4.  write a tcl program to print all the numbers from 1 to 100.
+which is divisible by 4 and skip when its in 70's and 90's?
+
+      for {set i 1} {$i <= 100} {incr i} {
+      if {$i % 4 == 0} {
+      if {$i / 10 == 7 || $i / 10 == 9} {
+      continue
+      }
+      puts $i
+      }
+      }
+
+
