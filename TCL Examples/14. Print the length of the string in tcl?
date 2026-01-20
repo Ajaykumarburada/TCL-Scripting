@@ -1,0 +1,43 @@
+1. write a tcl program to find the length of the string including spaces?
+
+set a "this is tcl scripting in physica design automation"
+set b [string length $a]
+puts "The length of the string is:$b"
+
+2. write a tcl program to find the length of the string excluding white spaces?
+
+    set text "welcome to vlsi domain in physical design engineer"
+    set a [string map {" " ""} $text]
+    set b [string length $a]
+    puts "length of the string excluding white spaces:$b"
+
+3. write a tcl program to find the number of the words present in string ?
+
+     set text "welcome to vlsi domain in physical design engineer"
+     foreach a $text {
+     puts $a
+     }
+     
+4. find the number of character of the text(including spaces)?
+
+     set a "welcome to vlsi domain in physical design engineer"
+     set b [string length $a]
+     puts "the number of characters including space is:$b"
+
+5. find the number of character of the text(Excluding spaces)?
+
+      set text "This is a sample text."
+      set text_nospace [string map {" " ""} $text]
+      set length_nospace [string length $text_nospace]
+      puts "The length of the text excluding spaces is: $length_nospace"
+
+6. find the number of words in a text?
+
+      set a "welcome to vlsi domain in physical design engineer"
+      set i 0
+      foreach b $a {
+      #puts $b
+      incr i
+      }
+      puts "the number of the words in a text is:$i"
+
