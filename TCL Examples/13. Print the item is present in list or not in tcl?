@@ -1,0 +1,17 @@
+
+1. write a tcl program to check the mango (item) is present in the list are not?
+
+      puts "Enter the fruit name:"
+      gets stdin b
+      set fruits {apple mango banana cherry}
+      
+      foreach a $fruits {
+        if {$a == $b} {
+      switch $b {
+      "apple" { puts "Apple is present" }
+      "bannana" { puts "bannana is present"}
+      "mango" { puts "mango is present" }
+      default {puts "No fruits present"}
+         }
+        }
+      }
