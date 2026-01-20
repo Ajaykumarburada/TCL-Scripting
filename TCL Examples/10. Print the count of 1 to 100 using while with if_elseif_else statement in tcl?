@@ -15,10 +15,29 @@
       }
     }
     
-2. display Incrementing count using for loop
+2. i) display Incrementing count from 1 to 10 using for loop
 
     for {set i 0} {$i < 10} {incr i} {
-      puts "i am at count $i and going up
+      puts "i am at count $i and going up"
     }
 
+                    or
+ii) By using while loop
+        set i 0
+        while {$i < 10} {
+            puts $i
+            incr i 
+        }
+3. i) Display decrementing count from 20 to 0 using for loop
 
+    for {set i 20} {$i >= 0} {incr i -1} {
+          puts "i am at count $i and going down"
+        }
+
+ii) By using while loop
+
+        set i 20
+        while {$i >= 0} {
+            puts $i
+            incr i -1
+        }
