@@ -1,0 +1,32 @@
+
+1. write a tcl program to find the factroial of the number from 0 to 10 ?
+
+    set fact 1
+    for {set i 0} {$i <= 10} {incr i} {
+    set fact [expr {$fact * ($i + 1)}]
+    puts "$i! = $fact"
+    }
+    
+2. Write a tcl program from 5! factorial?
+
+    set n 5
+    set fact 1
+    for {set i 1} {$i <= $n} {incr i} {
+      set fact [expr $fact * $i] 
+    }
+    puts "Factorial of $n is: $fact"
+    
+3. Write a tcl program from 5! factorial by using procedure?
+
+    proc factorial {n} {
+        set fact 1
+        for {set i 1} {$i <= $n} {incr i} {
+            set fact [expr {$fact * $i}]
+        }
+        return $fact
+    }
+    set num 5
+    set fact [factorial $num]
+    puts "Factorial of $num is: $fact"
+
+
