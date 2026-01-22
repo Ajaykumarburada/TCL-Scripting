@@ -60,6 +60,16 @@ Example:
       }
 
 
+Example 1:
+
+        array set numbers { 1 10 2 20 3 30}
+        set first_number $numbers(1)
+        puts $first_number
+        set second_number $numbers(2)
+        puts $second_number
+        set third_number $numbers(3)
+        puts $third_number
+
 
 
 
