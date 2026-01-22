@@ -1,0 +1,22 @@
+
+1. write a proc for addition, sub, mul and div of the two numbers?
+
+      proc arith {x1 x2 a b} {
+      if {$x1 == 0 && $x2 == 0 } {
+      set c [expr $a + $b]
+      return $c
+      } elseif {$x1 == 0 && $x2 == 1 } {
+      set c [expr $a - $b]
+      return $c
+      } elseif {$x1 == 1 && $x2 == 0 } {
+      set c [expr $a * $b]
+      return $c
+      } elseif {$x1 == 1 && $x2 == 1 } {
+      set c [expr $a / $b]
+      return $c
+      }
+      }
+      puts "Addition of a and b is:[arith 0 0 10.0 5]"
+      puts "Sub of a and b is:[arith 0 1 10.0 5]"
+      puts "Mul of a and b is:[arith 1 0 10.0 5]"
+      puts "Div of a and b is:[arith 1 1 10.0 5]"
