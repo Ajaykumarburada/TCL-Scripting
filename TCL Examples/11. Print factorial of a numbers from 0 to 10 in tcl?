@@ -29,4 +29,14 @@
     set fact [factorial $num]
     puts "Factorial of $num is: $fact"
 
+                    (or)
+
+        proc fac {a} {
+        set b 1
+        for {set i 1} {$i <= $a} {incr i} {
+        set b [expr $i*$b]
+        }
+        return $b
+        }
+        puts [fac 4]
 
