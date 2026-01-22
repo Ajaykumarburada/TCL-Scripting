@@ -21,14 +21,16 @@ puts $Professional
 Substitutions:
 
 1. Command Substitution:
-In command substitutions, square brackets are used to evaluate the scripts inside the square brackets. A simple example to add two numbers is shown below:
+In command substitutions, square brackets are used to evaluate the scripts inside the square brackets. 
+A simple example to add two numbers is shown below:
 
 puts [expr 1 + 6 + 9]
 puts [list ajay kumar burada]
 
 
 2. Variable substitution:
-In variable substitutions, $ is used before the variable name and this returns the contents of the variable. A simple example to set a value to a variable and print it is shown below.
+In variable substitutions, $ is used before the variable name and this returns the contents of the variable. 
+A simple example to set a value to a variable and print it is shown below.
 
 set a 5
 set b 10
@@ -38,7 +40,8 @@ puts $b
 puts [expr $a * $b] ;#command substitution
 
 3. Backslash Substituiton:
-These are commonly called escape sequences; with each backslash, followed by a letter having its own meaning. A simple example for newline substitution is shown below:
+These are commonly called escape sequences; with each backslash, followed by a letter having its own meaning. 
+A simple example for newline substitution is shown below:
 
 puts "Hello\nWorld" ;# \n is new line
 puts "Line 1\nLine 2\tTabbed"  ;# \t is tab
