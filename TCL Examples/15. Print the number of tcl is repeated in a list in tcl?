@@ -1,0 +1,63 @@
+
+1. write a tcl program to find the number of tcl is repeated in the a list ?
+
+      set a {TCL DSD Linux Gvim Custom_layout PD Functional_verification DV DFT Embedded_system tcl Tcl tcL}
+      set b [lsort -nocase $a]
+      puts $b
+      
+      set d [lmap elem $b {string toupper $elem}]
+      puts $d
+      
+      set i 0
+      foreach c $d {
+      if {$c == "TCL"} {
+      incr i
+      }
+      }
+      puts "the number of times tcl is repeated is:$i"
+      
+2. write tcl program for complete related to list ?
+
+      set port1 {p1 p2 p3 p4 p5 p6}
+      set port2 {p7 p8 p9 p10 p11 p12}
+      
+      set merged [concat $port1 $port2]
+      puts $merged
+      
+      set len [llength $merged]
+      puts $len
+      
+      set a [expr $len / 4.0]
+      puts $a
+      
+      set b [expr ceil($a)]
+      puts $b
+      
+      set c [expr int($b)]
+      puts $c
+      
+      set side1 [lrange $merged 0 [expr $c-1]]
+      puts "cell side 1 is:$side1"
+      
+      set side2 [lrange $merged $c [expr 2*$c-1]]
+      puts "cell side 2 is:$side2"
+      
+      set side3 [lrange $merged [expr 2*$c] [expr 3*$c-1]]
+      puts "cell side 3 is:$side3"
+      
+      set side4 [lrange $merged [expr 3*$c] [expr 4*$c-1]]
+      puts "cell side 4 is:$side4"
+
+3. write tcl program for lsort in list using foreach loop ?
+
+      set a {TCL DSD Linux Gvim Custom_layout PD Functional_verification DV DFT Embedded_system}
+      puts $a
+      set b [lsort $a]
+      puts $b
+      set i 1
+      foreach c $b {
+      puts "course $i is:$c"
+      incr i
+      }
+
+      
