@@ -19,6 +19,7 @@ puts $Professional
 
 
 Substitutions:
+In Tcl, substitution means replacing special constructs in a command with their actual values before the command is executed.
 
 1. Command Substitution:
 In command substitutions, square brackets are used to evaluate the scripts inside the square brackets. 
