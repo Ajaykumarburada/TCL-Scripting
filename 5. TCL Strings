@@ -114,7 +114,7 @@ Example :
     puts "Substring: $substring"
 
 6. string map:
-    set str "abcde
+    set str "abcde"
     set mapped_str [string map {a b} {1 2} $str]
     puts "Mapped string: $mapped_str" # Output: 12cde
 
