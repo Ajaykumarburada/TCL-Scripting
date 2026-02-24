@@ -10,5 +10,6 @@ puts $macro_palce
 if {[sizeof_collection [get_cells -hierarchical -filetr "is_hard_macro"]] == 0} {
 puts "WARNING: No hard macros found in the design!"
 } else {
- puts "INFO: Hard macros detected: [sizeof_collection [get_flat_cells -filter "is_hard_macro"]]"
+ puts "INFO: Hard macros detected: [sizeof_collection [get_cells -hierarchical -filter "is_hard_macro"]]"
 }
+set_fixed_objects [get_cells -hierarchical -filter "is_hard_macro == true"]
