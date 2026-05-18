@@ -1,0 +1,12 @@
+set colors [list red green blue yellow]
+
+foreach color $colors {
+    puts "I like $color"
+}
+
+# Loop with index
+set idx 0
+foreach color $colors {
+    puts "Color $idx: $color"
+    incr idx
+}
