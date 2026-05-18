@@ -1,0 +1,17 @@
+set current_time [clock format [clock seconds]]
+puts "current_time: $current_time"
+
+
+set results [expr 5 + 10]
+puts "marks : $results"
+
+
+set a 15
+set b 4
+
+puts "Addition: [expr $a + $b]"
+puts "Subtraction: [expr $a - $b]"
+puts "Multiplication: [expr $a * $b]"
+puts "Division: [expr $a / $b]"
+puts "Modulus: [expr $a % $b]"
+puts "Exponent: [expr $a ** 2]"
